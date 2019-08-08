@@ -1,4 +1,4 @@
-package com.example.myapplication1;
+package com.example.myapplication1.controler;
 
 import android.app.Activity;
 import android.view.View;
@@ -6,42 +6,42 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.myapplication1.NameAge;
+import com.example.myapplication1.R;
 import com.example.myapplication1.model.bo.PessoaBO;
 import com.example.myapplication1.model.vo.Pessoa;
 
 public class MainControl {
-    private  EditText textName;
-    private  EditText textAge;
-    private  TextView textView;
+    private EditText textName;
+    private EditText textAge;
+    private TextView textView;
     private Activity activity;
     private PessoaBO pBO = new PessoaBO();
-    public MainControl(Activity activity){
 
-        this.activity =activity;
-        initComponents();
-
+    public MainControl(Activity activity) {
+        this.activity = activity;
+        if (activity instanceof NameAge) {
+            initComponents();
+        }
 
     }
+
 
     private void initComponents() {
-        this.textName = activity.findViewById(R.id.textName);
-        this.textAge = activity.findViewById(R.id.textAge);
-        this.textView = activity.findViewById(R.id.textView);
-
+        NameAge nameAge = (NameAge) activity;
+        this.textName = nameAge.getNameField();
+        this.textAge = nameAge.getAgeField();
+        this.textView = nameAge.getViewField();
     }
 
-    public void saveAction(View view) {
-        
-    }
-
-    public void salvarAction() {
+    public void saveAction() {
         Pessoa p = new Pessoa();
         p.setNome(textName.getText().toString());
 
-        try{
-            Integer idade=Integer.parseInt(textAge.getText().toString());
+        try {
+            Integer idade = Integer.parseInt(textAge.getText().toString());
             p.setIdade(idade);
-        }catch (NumberFormatException e){
+        } catch (NumberFormatException e) {
             textAge.setError(activity.getString(R.string.erro_idade_invalida));
             Toast.makeText(
                     activity,
@@ -49,7 +49,7 @@ public class MainControl {
                     Toast.LENGTH_SHORT).show();
             return;
         }
-        if(!PessoaBO.validaIdade(p)){
+        if (!PessoaBO.validaIdade(p)) {
             textAge.setError(activity.getString(R.string.erro_idade_invalida));
             Toast.makeText(
                     activity,
@@ -58,31 +58,24 @@ public class MainControl {
             return;
         }
 
-
-         //Saída estática
+        //Saída estática
         textView.setText(pBO.toString(p));
 
-         //Saída dinâmica
+        //Saída dinâmica
         // TextView tvNewResultado = new TextView(activity);
         // tvNewResultado.setText(pBO.toString());
         // layoutResultado.addView(tvNewResultado);
     }
 
 
+    public void eraseAction() {
+        eraseForm();
+        textView.setText("");
+    }
 
-
-
-
-
-
-
-    public void eraseForm(){
+    public void eraseForm() {
         textName.setText("");
         textAge.setText("");
         textName.requestFocus();
-    }
-    public void eraseAction(View view) {
-        eraseForm();
-        textView.setText("");
     }
 }

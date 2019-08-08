@@ -9,12 +9,13 @@ import android.widget.TextView;
 
 import com.example.myapplication1.controler.MainControl;
 
-public class MainActivity extends AppCompatActivity implements NameAge {
-private MainControl control;
+public class MainActivityV2 extends AppCompatActivity implements NameAge {
+    private MainControl control;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_v2);
         control=new MainControl(this);
     }
     public EditText getAgeField(){
@@ -26,8 +27,8 @@ private MainControl control;
     public TextView getViewField(){
         return this.findViewById(R.id.textView);
     }
-
     public void save(View view) {control.saveAction();}
 
     public void erase(View view) {control.eraseAction();}
+
 }
