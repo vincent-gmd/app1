@@ -4,6 +4,7 @@ import com.example.myapplication1.model.vo.Pessoa;
 
 public class PessoaBO {
 
+
     public static boolean validaIdade(Pessoa p){
         return p.getIdade()!=null && p.getIdade()>0;
     }
