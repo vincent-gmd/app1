@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">My Application1</string>
+    <string name="age">idade</string>
+    <string name="erase">apagar</string>
+    <string name="erro_idade_invalida">erro idade invalida</string>
+    <string name="name">nome</string>
+    <string name="result">rasultado</string>
+    <string name="save">salvar</string>
+</resources>
