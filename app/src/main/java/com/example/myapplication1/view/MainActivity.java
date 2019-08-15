@@ -1,4 +1,4 @@
-package com.example.myapplication1;
+package com.example.myapplication1.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,15 +7,15 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.myapplication1.R;
 import com.example.myapplication1.controler.MainControl;
 
-public class MainActivityV2 extends AppCompatActivity implements NameAge {
-    private MainControl control;
-
+public class MainActivity extends AppCompatActivity  {
+private MainControl control;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_v2);
+        setContentView(R.layout.activity_main);
         control=new MainControl(this);
     }
     public EditText getAgeField(){
@@ -27,8 +27,8 @@ public class MainActivityV2 extends AppCompatActivity implements NameAge {
     public TextView getViewField(){
         return this.findViewById(R.id.textView);
     }
+
     public void save(View view) {control.saveAction();}
 
     public void erase(View view) {control.eraseAction();}
-
 }

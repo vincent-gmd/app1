@@ -1,23 +1,27 @@
-package com.example.myapplication1;
+package com.example.myapplication1.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.NumberPicker;
 import android.widget.TextView;
 
+import com.example.myapplication1.R;
 import com.example.myapplication1.controler.MainControl;
+import com.example.myapplication1.controler.MainControlV2;
 
-public class MainActivity extends AppCompatActivity implements NameAge {
-private MainControl control;
+public class MainActivityV2 extends AppCompatActivity  {
+    private MainControlV2 control;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        control=new MainControl(this);
+        setContentView(R.layout.activity_main_v2);
+        control=new MainControlV2(this);
     }
-    public EditText getAgeField(){
+    public NumberPicker getAgeField(){
         return this.findViewById(R.id.textAge);
     }
     public EditText getNameField(){
@@ -26,8 +30,8 @@ private MainControl control;
     public TextView getViewField(){
         return this.findViewById(R.id.textView);
     }
-
     public void save(View view) {control.saveAction();}
 
     public void erase(View view) {control.eraseAction();}
+
 }

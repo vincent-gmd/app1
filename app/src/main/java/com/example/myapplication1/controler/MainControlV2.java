@@ -1,22 +1,23 @@
 package com.example.myapplication1.controler;
 
 import android.widget.EditText;
+import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.myapplication1.view.MainActivity;
+import com.example.myapplication1.view.MainActivityV2;
 import com.example.myapplication1.R;
 import com.example.myapplication1.model.bo.PessoaBO;
 import com.example.myapplication1.model.vo.Pessoa;
 
-public class MainControl {
+public class MainControlV2 {
     private EditText textName;
-    private EditText textAge;
+    private NumberPicker textAge;
     private TextView textView;
-    private MainActivity activity;
+    private MainActivityV2 activity;
     private PessoaBO pBO = new PessoaBO();
 
-    public MainControl(MainActivity activity) {
+    public MainControlV2(MainActivityV2 activity) {
         this.activity = activity;
             initComponents();
 
@@ -34,10 +35,10 @@ public class MainControl {
         p.setNome(textName.getText().toString());
 
         try {
-            Integer idade = Integer.parseInt(textAge.getText().toString());
+            Integer idade = textAge.getValue();
             p.setIdade(idade);
         } catch (NumberFormatException e) {
-            textAge.setError(activity.getString(R.string.erro_idade_invalida));
+            //textAge.setError(activity.getString(R.string.erro_idade_invalida));
             Toast.makeText(
                     activity,
                     R.string.erro_idade_invalida,
@@ -45,7 +46,7 @@ public class MainControl {
             return;
         }
         if (!PessoaBO.validaIdade(p)) {
-            textAge.setError(activity.getString(R.string.erro_idade_invalida));
+            //textAge.setError(activity.getString(R.string.erro_idade_invalida));
             Toast.makeText(
                     activity,
                     R.string.erro_idade_invalida,
@@ -70,7 +71,7 @@ public class MainControl {
 
     public void eraseForm() {
         textName.setText("");
-        textAge.setText("");
+        textAge.setValue(0);
         textName.requestFocus();
     }
 }

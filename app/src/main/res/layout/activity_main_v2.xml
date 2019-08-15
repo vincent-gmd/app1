@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivityV2">
+    tools:context=".view.MainActivityV2">
 
     <EditText
         android:id="@+id/textView"
@@ -19,7 +19,7 @@
         android:id="@+id/textAge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
+        android:layout_gravity="center"
         android:hint="@string/age" />
 
     <LinearLayout
