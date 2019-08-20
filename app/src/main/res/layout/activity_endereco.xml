@@ -13,7 +13,7 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/textName"
+            android:id="@+id/edit_cep"
             style="@style/edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -22,7 +22,7 @@
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/textAge"
+            android:id="@+id/edit_cidade"
             style="@style/edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

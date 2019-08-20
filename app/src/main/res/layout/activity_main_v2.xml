@@ -5,12 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".view.atividade2.MainActivityV2">
+    tools:context=".view.atividade2.MainActivityV2"
     style="@style/container"
     android:background="@drawable/estatua-de-santa-rita"
-
+    >
 
     <EditText
+        style="@style/edit_text"
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,6 +20,7 @@
         android:hint="@string/name" />
 
     <NumberPicker
+        style="@style/numberPiker"
         android:id="@+id/textAge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -31,6 +33,8 @@
         android:orientation="horizontal">
 
         <Button
+            style="@style/btn_sucesso"
+
             android:id="@+id/buttonSave"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -39,6 +43,8 @@
             android:text="@string/save" />
 
         <Button
+            style="@style/btn_sucesso"
+
             android:id="@+id/buttonErase"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -16,6 +16,16 @@
         <item name="android:layout_marginBottom">5dp</item>
     </style>
 
+    <style name="numberPiker" parent="Base">
+        <item name="android:background">"@drawable/number_piker_style"</item>
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+
+
     <style name="edit_text" parent="Base">
         <!-- Customize your theme here. -->
         <item name="android:background">@color/colorFundoEditText</item>
