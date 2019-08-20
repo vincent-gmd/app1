@@ -33,7 +33,7 @@ public class DadoPessoal implements Serializable {
     @Override
     public String toString(){
         return "nome: "+nome+"\n" +
-                "idade: "idade;
+                "idade: "+idade;
     }
 
 }

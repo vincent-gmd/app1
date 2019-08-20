@@ -5,7 +5,7 @@ import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.myapplication1.view.MainActivityV2;
+import com.example.myapplication1.view.atividade2.MainActivityV2;
 import com.example.myapplication1.R;
 import com.example.myapplication1.model.bo.PessoaBO;
 import com.example.myapplication1.model.vo.Pessoa;
@@ -19,7 +19,7 @@ public class MainControlV2 {
 
     public MainControlV2(MainActivityV2 activity) {
         this.activity = activity;
-            initComponents();
+        initComponents();
 
     }
 
@@ -34,17 +34,8 @@ public class MainControlV2 {
         Pessoa p = new Pessoa();
         p.setNome(textName.getText().toString());
 
-        try {
-            Integer idade = textAge.getValue();
-            p.setIdade(idade);
-        } catch (NumberFormatException e) {
-            //textAge.setError(activity.getString(R.string.erro_idade_invalida));
-            Toast.makeText(
-                    activity,
-                    R.string.erro_idade_invalida,
-                    Toast.LENGTH_SHORT).show();
-            return;
-        }
+        Integer idade = textAge.getValue();
+        p.setIdade(idade);
         if (!PessoaBO.validaIdade(p)) {
             //textAge.setError(activity.getString(R.string.erro_idade_invalida));
             Toast.makeText(

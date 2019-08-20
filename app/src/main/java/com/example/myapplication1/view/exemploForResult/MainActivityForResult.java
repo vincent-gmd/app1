@@ -1,4 +1,4 @@
-package com.example.myapplication1.view;
+package com.example.myapplication1.view.exemploForResult;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,4 +17,12 @@ public class MainActivityForResult extends AppCompatActivity {
     public void telaDadoPessoais (View view){
 
     }
+    public void telaEndereco (View view){
+
+    }
+    public void telaResultado (View view){
+
+    }
+
+
 }

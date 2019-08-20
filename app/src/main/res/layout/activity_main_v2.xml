@@ -5,7 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".view.MainActivityV2">
+    tools:context=".view.atividade2.MainActivityV2">
+    style="@style/container"
+    android:background="@drawable/estatua-de-santa-rita"
+
 
     <EditText
         android:id="@+id/textView"
