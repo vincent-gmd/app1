@@ -7,4 +7,10 @@
     <string name="name">nome</string>
     <string name="result">rasultado</string>
     <string name="save">salvar</string>
+    <string name="personal_data">dados pesoais</string>
+    <string name="address">endereço</string>
+    <string name="send">enviar</string>
+    <string name="cancel">cancelar</string>
+    <string name="zip">cep</string>
+    <string name="city">cidade</string>
 </resources>

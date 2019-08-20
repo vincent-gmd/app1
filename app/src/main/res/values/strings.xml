@@ -6,4 +6,10 @@
     <string name="erase">erase</string>
     <string name="result">result</string>
     <string name="erro_idade_invalida">error invalid age</string>
+    <string name="personal_data">Personal Data</string>
+    <string name="address">address</string>
+    <string name="send">send</string>
+    <string name="cancel">cancel</string>
+    <string name="zip">zip</string>
+    <string name="city">city</string>
 </resources>
